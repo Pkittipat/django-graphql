@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -82,7 +83,7 @@ DATABASES = {
         'HOST': '127.0.0.1',
         'NAME': 'graphql',
         'USER': 'postgres',
-        'PASSWORD': 'fang1234'
+        'PASSWORD': os.getenv('DATABASE_PASSWORD', None)
     }
 }
 
